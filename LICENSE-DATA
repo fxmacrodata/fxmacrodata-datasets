@@ -1,0 +1,24 @@
+Data licence
+
+The files in the datasets/ directory are licensed under the Creative Commons
+Attribution 4.0 International licence (CC BY 4.0).
+
+Full legal text: https://creativecommons.org/licenses/by/4.0/legalcode
+Summary:         https://creativecommons.org/licenses/by/4.0/
+
+Required attribution:
+
+    Data: FXMacroData, https://fxmacrodata.com
+
+Place the attribution wherever the data or anything derived from it is shown
+or redistributed: a figure caption, a notebook cell, a dataset card, or the
+documentation of a package that bundles or downloads these files. Indicate if
+you changed the data.
+
+The values are official statistics and central bank decisions. Each row names
+its official publisher in the source or central_bank column and links to the
+publication in source_url. The CC BY 4.0 grant covers this compilation, its
+release timestamps and its structure.
+
+The code in this repository (fxmacrodata_datasets/, scripts/, tests/) is
+licensed separately under the MIT licence; see LICENSE.

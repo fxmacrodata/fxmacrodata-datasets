@@ -1,0 +1,177 @@
+{
+  "version": "0.0.0",
+  "tag": null,
+  "status": "pending",
+  "attribution": "Data: FXMacroData, https://fxmacrodata.com",
+  "license": "CC-BY-4.0",
+  "datasets": {
+    "us_macro_releases": {
+      "path": "datasets/us_macro_releases.csv",
+      "sha256": null,
+      "rows": null,
+      "bytes": null,
+      "fields": [
+        [
+          "reference_period",
+          "date"
+        ],
+        [
+          "indicator",
+          "string"
+        ],
+        [
+          "name",
+          "string"
+        ],
+        [
+          "value",
+          "number"
+        ],
+        [
+          "unit",
+          "string"
+        ],
+        [
+          "series_options",
+          "string"
+        ],
+        [
+          "announcement_datetime_utc",
+          "datetime"
+        ],
+        [
+          "release_time_assumed",
+          "boolean"
+        ],
+        [
+          "source",
+          "string"
+        ],
+        [
+          "source_url",
+          "string"
+        ]
+      ]
+    },
+    "g10_policy_rates": {
+      "path": "datasets/g10_policy_rates.csv",
+      "sha256": null,
+      "rows": null,
+      "bytes": null,
+      "fields": [
+        [
+          "currency",
+          "string"
+        ],
+        [
+          "decision_date",
+          "date"
+        ],
+        [
+          "rate_name",
+          "string"
+        ],
+        [
+          "value",
+          "number"
+        ],
+        [
+          "unit",
+          "string"
+        ],
+        [
+          "previous_value",
+          "number"
+        ],
+        [
+          "change_from_previous",
+          "number"
+        ],
+        [
+          "announcement_datetime_utc",
+          "datetime"
+        ],
+        [
+          "announcement_datetime_local",
+          "string"
+        ],
+        [
+          "release_time_assumed",
+          "boolean"
+        ],
+        [
+          "central_bank",
+          "string"
+        ],
+        [
+          "source_url",
+          "string"
+        ]
+      ]
+    },
+    "release_calendar_sample": {
+      "path": "datasets/release_calendar_sample.csv",
+      "sha256": null,
+      "rows": null,
+      "bytes": null,
+      "fields": [
+        [
+          "currency",
+          "string"
+        ],
+        [
+          "indicator",
+          "string"
+        ],
+        [
+          "name",
+          "string"
+        ],
+        [
+          "reference_period",
+          "date"
+        ],
+        [
+          "scheduled_datetime_utc",
+          "datetime"
+        ],
+        [
+          "release_date_confirmed",
+          "boolean"
+        ],
+        [
+          "time_announced",
+          "boolean"
+        ],
+        [
+          "event_importance",
+          "string"
+        ],
+        [
+          "announcement_datetime_utc",
+          "datetime"
+        ],
+        [
+          "seconds_from_schedule",
+          "integer"
+        ],
+        [
+          "release_time_assumed",
+          "boolean"
+        ],
+        [
+          "value",
+          "number"
+        ],
+        [
+          "calendar_source_url",
+          "string"
+        ],
+        [
+          "source_url",
+          "string"
+        ]
+      ]
+    }
+  }
+}

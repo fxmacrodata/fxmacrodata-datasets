@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use these datasets, please cite them as below and keep the attribution 'Data: FXMacroData, https://fxmacrodata.com'."
+type: dataset
+title: "FXMacroData open sample datasets"
+abstract: "Historical snapshots of official US macroeconomic releases, G10 policy rate decisions and a release calendar sample, each with UTC release timestamps, for event studies, look-ahead-safe backtests and nowcasting tutorials."
+authors:
+  - name: "FXMacroData"
+    email: "info@fxmacrodata.com"
+    website: "https://fxmacrodata.com/?utm_source=github&utm_medium=referral&utm_campaign=fxmacrodata-datasets&utm_content=citation"
+repository-code: "https://github.com/fxmacrodata/fxmacrodata-datasets"
+url: "https://fxmacrodata.com/?utm_source=github&utm_medium=referral&utm_campaign=fxmacrodata-datasets&utm_content=citation"
+license: CC-BY-4.0
+keywords:
+  - macroeconomics
+  - central banks
+  - policy rates
+  - inflation
+  - event study
+  - time series

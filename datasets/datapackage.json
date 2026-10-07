@@ -1,0 +1,302 @@
+{
+  "profile": "tabular-data-package",
+  "name": "fxmacrodata-datasets",
+  "title": "FXMacroData open sample datasets",
+  "description": "Small, openly licensed historical snapshots of official macroeconomic releases and central bank decisions with release timestamps, for tutorials, event studies and look-ahead-safe backtests.",
+  "version": "0.0.0",
+  "x_status": "pending",
+  "x_snapshot_cutoff": null,
+  "x_attribution": "Data: FXMacroData, https://fxmacrodata.com",
+  "homepage": "https://github.com/fxmacrodata/fxmacrodata-datasets",
+  "licenses": [
+    {
+      "name": "CC-BY-4.0",
+      "title": "Creative Commons Attribution 4.0 International",
+      "path": "https://creativecommons.org/licenses/by/4.0/"
+    }
+  ],
+  "sources": [
+    {
+      "title": "FXMacroData",
+      "path": "https://fxmacrodata.com/?utm_source=github&utm_medium=referral&utm_campaign=fxmacrodata-datasets&utm_content=datapackage"
+    }
+  ],
+  "contributors": [
+    {
+      "title": "FXMacroData",
+      "role": "publisher",
+      "email": "info@fxmacrodata.com"
+    }
+  ],
+  "resources": [
+    {
+      "name": "us_macro_releases",
+      "path": "us_macro_releases.csv",
+      "title": "US macro releases",
+      "description": "Headline US releases (CPI, core CPI, nonfarm payrolls change, unemployment rate, real GDP growth, PCE and core PCE inflation, retail sales) with the UTC time each value was announced. Values are the latest published vintage; timestamps are the original release times.",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "dialect": {
+        "delimiter": ",",
+        "lineTerminator": "\n",
+        "header": true
+      },
+      "licenses": [
+        {
+          "name": "CC-BY-4.0",
+          "title": "Creative Commons Attribution 4.0 International",
+          "path": "https://creativecommons.org/licenses/by/4.0/"
+        }
+      ],
+      "schema": {
+        "fields": [
+          {
+            "name": "reference_period",
+            "type": "date",
+            "description": "Period the value refers to (period end date)."
+          },
+          {
+            "name": "indicator",
+            "type": "string",
+            "description": "FXMacroData indicator slug."
+          },
+          {
+            "name": "name",
+            "type": "string",
+            "description": "Indicator name."
+          },
+          {
+            "name": "value",
+            "type": "number",
+            "description": "Released value, latest vintage."
+          },
+          {
+            "name": "unit",
+            "type": "string",
+            "description": "Unit of value."
+          },
+          {
+            "name": "series_options",
+            "type": "string",
+            "description": "API query options used for the series, empty for the default series."
+          },
+          {
+            "name": "announcement_datetime_utc",
+            "type": "datetime",
+            "description": "When the value was published, UTC."
+          },
+          {
+            "name": "release_time_assumed",
+            "type": "boolean",
+            "description": "True when the release time was derived from the series' typical publication lag rather than captured from a release calendar."
+          },
+          {
+            "name": "source",
+            "type": "string",
+            "description": "Official publisher."
+          },
+          {
+            "name": "source_url",
+            "type": "string",
+            "description": "Link to the official publication."
+          }
+        ],
+        "primaryKey": [
+          "indicator",
+          "reference_period"
+        ]
+      }
+    },
+    {
+      "name": "g10_policy_rates",
+      "path": "g10_policy_rates.csv",
+      "title": "G10 policy rate decisions",
+      "description": "Policy rate decisions for USD, EUR, GBP, JPY, CHF, CAD, AUD, NZD, SEK and NOK with the UTC announcement time of each decision.",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "dialect": {
+        "delimiter": ",",
+        "lineTerminator": "\n",
+        "header": true
+      },
+      "licenses": [
+        {
+          "name": "CC-BY-4.0",
+          "title": "Creative Commons Attribution 4.0 International",
+          "path": "https://creativecommons.org/licenses/by/4.0/"
+        }
+      ],
+      "schema": {
+        "fields": [
+          {
+            "name": "currency",
+            "type": "string",
+            "description": "ISO 4217 currency code."
+          },
+          {
+            "name": "decision_date",
+            "type": "date",
+            "description": "Date of the decision as published by the central bank."
+          },
+          {
+            "name": "rate_name",
+            "type": "string",
+            "description": "Name of the policy rate."
+          },
+          {
+            "name": "value",
+            "type": "number",
+            "description": "Policy rate after the decision."
+          },
+          {
+            "name": "unit",
+            "type": "string",
+            "description": "Unit of value."
+          },
+          {
+            "name": "previous_value",
+            "type": "number",
+            "description": "Policy rate before the decision."
+          },
+          {
+            "name": "change_from_previous",
+            "type": "number",
+            "description": "value minus previous_value, percentage points."
+          },
+          {
+            "name": "announcement_datetime_utc",
+            "type": "datetime",
+            "description": "When the decision was announced, UTC."
+          },
+          {
+            "name": "announcement_datetime_local",
+            "type": "string",
+            "description": "Announcement time in the central bank's own timezone, ISO 8601 with offset."
+          },
+          {
+            "name": "release_time_assumed",
+            "type": "boolean",
+            "description": "True when the announcement time was derived rather than captured."
+          },
+          {
+            "name": "central_bank",
+            "type": "string",
+            "description": "Publishing central bank."
+          },
+          {
+            "name": "source_url",
+            "type": "string",
+            "description": "Link to the official publication."
+          }
+        ],
+        "primaryKey": [
+          "currency",
+          "decision_date"
+        ]
+      }
+    },
+    {
+      "name": "release_calendar_sample",
+      "path": "release_calendar_sample.csv",
+      "title": "Release calendar sample, scheduled vs announced",
+      "description": "One calendar quarter of scheduled G10 macro releases joined to the time each value was actually announced. Built for event-study and timing demos.",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "dialect": {
+        "delimiter": ",",
+        "lineTerminator": "\n",
+        "header": true
+      },
+      "licenses": [
+        {
+          "name": "CC-BY-4.0",
+          "title": "Creative Commons Attribution 4.0 International",
+          "path": "https://creativecommons.org/licenses/by/4.0/"
+        }
+      ],
+      "schema": {
+        "fields": [
+          {
+            "name": "currency",
+            "type": "string",
+            "description": "ISO 4217 currency code."
+          },
+          {
+            "name": "indicator",
+            "type": "string",
+            "description": "FXMacroData indicator slug."
+          },
+          {
+            "name": "name",
+            "type": "string",
+            "description": "Release name."
+          },
+          {
+            "name": "reference_period",
+            "type": "date",
+            "description": "Period the release refers to."
+          },
+          {
+            "name": "scheduled_datetime_utc",
+            "type": "datetime",
+            "description": "Scheduled release time from the official calendar, UTC."
+          },
+          {
+            "name": "release_date_confirmed",
+            "type": "boolean",
+            "description": "True when the publisher confirmed the date."
+          },
+          {
+            "name": "time_announced",
+            "type": "boolean",
+            "description": "True when the publisher announced a time of day."
+          },
+          {
+            "name": "event_importance",
+            "type": "string",
+            "description": "low, medium or high."
+          },
+          {
+            "name": "announcement_datetime_utc",
+            "type": "datetime",
+            "description": "When the value was announced, UTC. Empty when no matching release was found."
+          },
+          {
+            "name": "seconds_from_schedule",
+            "type": "integer",
+            "description": "announcement_datetime_utc minus scheduled_datetime_utc, seconds."
+          },
+          {
+            "name": "release_time_assumed",
+            "type": "boolean",
+            "description": "True when the announcement time was derived rather than captured."
+          },
+          {
+            "name": "value",
+            "type": "number",
+            "description": "Released value, latest vintage."
+          },
+          {
+            "name": "calendar_source_url",
+            "type": "string",
+            "description": "Official calendar the schedule came from."
+          },
+          {
+            "name": "source_url",
+            "type": "string",
+            "description": "Link to the official publication."
+          }
+        ],
+        "primaryKey": [
+          "currency",
+          "indicator",
+          "reference_period",
+          "scheduled_datetime_utc"
+        ]
+      }
+    }
+  ]
+}

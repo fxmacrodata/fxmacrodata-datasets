@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fxmacrodata-datasets"
+version = "0.1.0"
+description = "Loaders for the FXMacroData open sample datasets: official macro releases and central bank decisions with release timestamps"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT (code); CC-BY-4.0 (data)" }
+authors = [{ name = "FXMacroData", email = "info@fxmacrodata.com" }]
+keywords = ["macroeconomics", "datasets", "time series", "event study", "central banks", "forex"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Intended Audience :: Science/Research",
+  "Topic :: Scientific/Engineering :: Information Analysis",
+]
+dependencies = []
+
+[project.optional-dependencies]
+pandas = ["pandas>=1.5"]
+
+[project.urls]
+Homepage = "https://fxmacrodata.com/?utm_source=github&utm_medium=referral&utm_campaign=fxmacrodata-datasets&utm_content=pyproject"
+Source = "https://github.com/fxmacrodata/fxmacrodata-datasets"
+
+[tool.setuptools]
+packages = ["fxmacrodata_datasets"]
+
+[tool.setuptools.package-data]
+fxmacrodata_datasets = ["registry.json"]
